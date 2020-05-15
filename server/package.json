@@ -1,0 +1,16 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "SET DEBUG='basketball-league-ws' & node index.js --port=7070 --host='127.0.0.1'"
+  },
+  "author": "Grupi 21",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "uuid": "^8.0.0",
+    "ws": "^7.3.0",
+    "yargs": "^15.3.1"
+  }
+}
