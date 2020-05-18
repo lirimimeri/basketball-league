@@ -2,6 +2,11 @@ const PING_INTERVAL = 10000
 const FPS = 1000 / 60 // 30fps
 let videoRecording = false
 
+//league standings url data api: 
+standingsUrl = "http://161.35.78.37/api/league"
+
+//games played every weeks(results)
+resultsUrl = "http://161.35.78.37/api/results"
 
 const loadSelfCam = () => {
   if (videoRecording) return
