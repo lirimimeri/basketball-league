@@ -28,10 +28,19 @@
     <div class="container-fluid h-100">
       <div class="row h-100">
         <div class="col-4 table-container">
-          <div class="row">
-            <div class="col-12 table-header"></div>
-          </div>
-          <div class="col-12 table-trades"></div>
+          <table id="ranking-table" class="ranking-table">
+            <tr>
+              <td>#</td>
+              <td>Club name</td>
+              <td>Matches</td>
+              <td>Wins</td>
+              <td>Loses</td>
+              <td>Sc - Acc</td>
+              <td>Difference</td>
+              <td>Points</td>
+            </tr>
+            
+          </table>
         </div>
         <div class="col-8 chat-container">
           <div class="chat-header">
@@ -102,5 +111,6 @@
       </div>
     </div>
     <script src="./script.js"></script>
+    <script src="./table.js"></script>
   </body>
 </html>
