@@ -1,4 +1,4 @@
-const URL = "http://161.35.78.37/api/league"
+const URL = "http://134.122.87.241/api/league"
 
 const createNode = (element) => {
   return document.createElement(element);
