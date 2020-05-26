@@ -19,6 +19,7 @@ class BasketballLeague extends Server {
     this.on("connection", (ws) => {
       const uid = uuid();
       this._sockets[uid] = ws;
+      console.log("client connected")
 
       ws.on("message", (data) => {
         try {
@@ -35,7 +36,7 @@ class BasketballLeague extends Server {
       });
 
       ws.on("close", (code, reason) => {
-        debugClient(
+        console.log(
           "client %s closed with code %d and reason %s",
           uid,
           code,
@@ -98,7 +99,7 @@ class BasketballLeague extends Server {
     if (!t) throw new Error("ERR_INVALID_TOPIC");
     if (t.uids.findIndex((x) => x === uid) < 0) {
       t.uids.push(uid);
-      debugTopic("client %s subscribed to topic %s", uid, topic);
+      console.log("client %s subscribed to topic %s", uid, topic);
     }
   }
 
@@ -110,7 +111,7 @@ class BasketballLeague extends Server {
     const t = this._channels[topic];
     if (!t) throw new Error("ERR_INVALID_TOPIC");
     t.uids = t.uids.filter((x) => x !== uid);
-    debugTopic("client %s unsubscribed from topic %s", uid, topic);
+    console.log("client %s unsubscribed from topic %s", uid, topic);
   }
 
   /**
@@ -141,7 +142,7 @@ class BasketballLeague extends Server {
   _createTopic(uid, topic) {
     if (this._channels[topic]) throw new Error("ERR_TOPIC_EXITS");
     this._channels[topic] = { write: true, uids: [uid] };
-    debugTopic("client %s ceated topic %s", uid, topic);
+    console.log("client %s ceated topic %s", uid, topic);
   }
 
   /**

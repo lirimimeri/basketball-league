@@ -1,5 +1,7 @@
 <html>
   <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -25,22 +27,32 @@
   </head>
 
   <body>
+    <script src="./script.js"></script>
+    <script src="./table.js"></script>
     <div class="container-fluid h-100">
       <div class="row h-100">
         <div class="col-4 table-container">
-          <table id="ranking-table" class="ranking-table">
+          <table id="ranking-table" class="mystyle">
             <tr>
               <td>#</td>
-              <td>Club name</td>
-              <td>Matches</td>
-              <td>Wins</td>
-              <td>Loses</td>
-              <td>Sc - Acc</td>
-              <td>Difference</td>
-              <td>Points</td>
+              <td>Team</td>
+              <td>MP</td>
+              <td>W</td>
+              <td>L</td>
+              <td>G</td>
+              <td>GD</td>
+              <td>Pts</td>
             </tr>
-            
           </table>
+          <div id="matches" class="row">
+            <script>
+                // document.write("<div class='row'>")
+                //   console.log(dataSouce.data1)
+                //   document.write("<div class='col'>asd</div>")
+                //   console.log(dataSouce.data2)
+                // document.write("</div>")           
+            </script>
+          </div>
         </div>
         <div class="col-8 chat-container">
           <div class="chat-header">
@@ -110,7 +122,6 @@
         </div>
       </div>
     </div>
-    <script src="./script.js"></script>
-    <script src="./table.js"></script>
+
   </body>
 </html>
