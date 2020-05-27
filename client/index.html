@@ -2,6 +2,7 @@
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 
+
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -31,7 +32,7 @@
     <script src="./table.js"></script>
     <div class="container-fluid h-100">
       <div class="row h-100">
-        <div class="col-4 table-container">
+        <div class="col-4 table-container" style="overflow:auto">
           <table id="ranking-table" class="mystyle">
             <tr>
               <td>#</td>
@@ -44,14 +45,8 @@
               <td>Pts</td>
             </tr>
           </table>
-          <div id="matches" class="row">
-            <script>
-                // document.write("<div class='row'>")
-                //   console.log(dataSouce.data1)
-                //   document.write("<div class='col'>asd</div>")
-                //   console.log(dataSouce.data2)
-                // document.write("</div>")           
-            </script>
+          <div id="matches" class="matches">
+            
           </div>
         </div>
         <div class="col-8 chat-container">
