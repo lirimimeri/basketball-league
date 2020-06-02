@@ -9,18 +9,22 @@
 <body>
     <h1>Admin Pannel</h1>
     <div class="matches">
+        <form action="http://134.122.87.241/api/matches" method="POST">
         <h5>Edit matches</h5>
-        Week: <input type="number" class="week"/>
+        Week: <input type="number" class="week" name="week_id"/>
         <br />
-        <select id="select-home">
-            <option value="default">Home</option>
+        Date: <input type="date" class="week" name="date"/>
+        <br />
+        <select id="select-home" name="home_id">
+            <option value="default" disabled>Home</option>
         </select>
-        <input type="number" class="scores">
-        <input type="number" class="scores">
-        <select id="select-away">
-            <option value="default">Away</option>
+        <input type="number" class="scores" name="home_score">
+        <input type="number" class="scores" name="away_score">
+        <select id="select-away" name="away_id">
+            <option value="default" disabled>Away</option>
         </select><br />
-        <button type="submit">Submit</button>
+        <button  type="submit">Submit</button>
+    </form>
     </div>
 </body>
 <script src="./script.js"></script>
