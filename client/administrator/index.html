@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin pannel</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
     <h1>Admin Pannel</h1>
     <div class="matches">
-        <form action="http://134.122.87.241/api/matches" method="POST">
-            <input type="hidden" name="Authorization" value=`Bearer ${sessionStorage.getItem('token')}`>
+      <form>
+        <input type="hidden">
         <h5>Edit matches</h5>
-        Week: <input type="number" class="week" name="week_id"/>
+        Week: <input type="number" class="week" id="week_id" />
         <br />
-        Date: <input type="date" class="week" name="date"/>
+        Date: <input type="date" class="week" id="date" />
         <br />
-        <select id="select-home" name="home_id">
-            <option value="default" disabled>Home</option>
+        <select id="select-home" id="home_id">
+          <option value="default" disabled>Home</option>
         </select>
-        <input type="number" class="scores" name="home_score">
-        <input type="number" class="scores" name="away_score">
-        <select id="select-away" name="away_id">
-            <option value="default" disabled>Away</option>
-        </select><br />
-        <button  type="submit">Submit</button>
-    </form>
+        <input type="number" class="scores" id="home_score" />
+        <input type="number" class="scores" id="away_score" />
+        <select id="select-away" id="away_id">
+          <option value="default" disabled>Away</option> </select
+        ><br />
+        <button type="submit" id="submit-button">Submit</button>
+      </form>
     </div>
-</body>
-<script>
-    alert(sessionStorage.getItem('token'))
-
-</script>
-<script src="./script.js"></script>
+  </body>
+  <script>
+    alert(sessionStorage.getItem("token"));
+  </script>
+  <script src="./script.js"></script>
 </html>

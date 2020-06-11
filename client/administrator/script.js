@@ -1,6 +1,15 @@
 var selectHome = document.getElementById("select-home")
 var selectAway = document.getElementById("select-away")
 
+var home_score = document.getElementById('home_score').value
+var away_score = document.getElementById('home_score').value
+var home_id = document.getElementById('home_score').value
+var date = document.getElementById('home_score').value
+var week_id = document.getElementById('home_score').value
+var away_id = document.getElementById('home_score').value
+
+
+
 fetch("http://134.122.87.241/api/teams")
 .then(response => response.json())
 .then(data => {
@@ -18,7 +27,19 @@ fetch("http://134.122.87.241/api/teams")
     })
 })
 
-function addMatch(event){
-    event.preventDefault();
-    alert(selectHome.options[selectHome.selectedIndex].value);
-}
+document.getElementById('submit-button').addEventListener('click', (ev) => {
+    fetch("http://134.122.87.241/api/teams", {
+        method: 'POST',
+        headers: {
+            'Authentication': `Bearer ${sessionStorage.getItem('token')}`
+        },
+        body: {
+            'week_id': week_id,
+            'date': date,
+            'home_id': home_id,
+            'home_score': home_score,
+            'away_score': away_score,
+            'away_id': away_id,
+        }
+    })
+})
