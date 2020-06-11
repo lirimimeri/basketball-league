@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 10%;
+        }
+        input {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h4>Please log in to continue...</h4>
+    <form id="loginForm" method="POST">
+        username: <input type="text" name="email" id="username"><br />
+        password: <input type="password" name="password" id="password"> <br />
+        <input type="hidden" name="device_name" value="web">
+        <button type="submit" id="submit">Log In</button>
+    </form>
+    <script>
+        $('#loginForm').submit(function(e) {
+    e.preventDefault();
+    $.ajax({
+        url: 'http://134.122.87.241/api/login',
+        data: $(this).serialize(),
+        type: 'POST',
+        success: function(data) {
+            if(data.hasOwnProperty('plainTextToken')){
+                // save token
+                console.log(data.plainTextToken)
+                sessionStorage.setItem('token', data.plainTextToken)
+                window.location.replace('/C:/Users/lirim/Documents/GitHub/basketball-league/client/administrator/index.html')
+                //console.log(sessionStorage.getItem('token'))
+            }
+        }
+    });
+});
+    </script>
+</body>
+<script src="app.js"></script>
+</html>

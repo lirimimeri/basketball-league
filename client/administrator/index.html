@@ -7,9 +7,11 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+
     <h1>Admin Pannel</h1>
     <div class="matches">
         <form action="http://134.122.87.241/api/matches" method="POST">
+            <input type="hidden" name="Authorization" value=`Bearer ${sessionStorage.getItem('token')}`>
         <h5>Edit matches</h5>
         Week: <input type="number" class="week" name="week_id"/>
         <br />
@@ -27,5 +29,9 @@
     </form>
     </div>
 </body>
+<script>
+    alert(sessionStorage.getItem('token'))
+
+</script>
 <script src="./script.js"></script>
 </html>
