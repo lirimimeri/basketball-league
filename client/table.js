@@ -26,6 +26,7 @@ fetch(URL)
         difference,
         league_points,
       } = club;
+
       let row = createNode("tr");
       let td0 = createNode("td");
       let td1 = createNode("td");
@@ -36,7 +37,7 @@ fetch(URL)
       let td6 = createNode("td");
       let td7 = createNode("td");
 
-      td0.innerHTML = ` ${index + 1}`;
+      td0.innerHTML = ` ${index+1}`;
       td1.innerHTML = ` ${team}`;
       td2.innerHTML = ` ${matches}`;
       td3.innerHTML = ` ${wins}`;
@@ -65,7 +66,6 @@ fetch(URL)
         console.log(data)
         var mainContainer = document.getElementById("matches")
         data.map(a => {
-          
           var div = createNode("div")
           div.classList.add("week")
           div.innerHTML = "Week "+a.week
@@ -79,14 +79,6 @@ fetch(URL)
           mainContainer.appendChild(div)
 
         })
-        // for (var i = 0; i < data.length; i++) {
- 
-        //     var div = createNode("div");
-        //     div.innerHTML = data[0].matches[i].home + " " +data[0].matches[i].home_score + " : " + data[0].matches[i].away_score + " "+data[0].matches[0].away 
-
-        //     mainContainer.appendChild(div);
-
-        // }
         
     });
 

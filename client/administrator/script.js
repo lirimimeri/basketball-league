@@ -7,7 +7,7 @@ fetch("http://134.122.87.241/api/teams")
     data.map(a => {
         var option1 = document.createElement("option")
         var option2 = document.createElement("option")
-
+        
         option1.innerHTML = a.name
         option1.value = a.id
         option2.innerHTML = a.name
